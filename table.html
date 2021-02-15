@@ -8,14 +8,26 @@
     <title>Table</title>
 </head>
 
+<style>
+    table, th, tr, td{
+        border: 1px dotted black;
+        border-collapse: collapse;
+        padding: 5px 25px 5px 25px;
+    }
+    table tr:nth-child(even){
+        background-color: rgb(233, 233, 233)
+    }
+</style>
+
+
 <body>
     <table>
         <tr>
-            <th colspan="4">
+            <th style="color: #FC3004;" colspan="4">
             STUDENT INFORMATION
             </th>
         </tr>
-        <tr>
+        <tr style="color: #041EFC;">
             <th colspan="2">
                 Name AND <u><i>Roll no.</i></u>
             </th>
@@ -23,7 +35,7 @@
                 <i>Contact No. AND <u>E-mail ID</u></i>
             </td>
         </tr>
-        <tr>
+        <tr style="color: #D604FC;">
             <td>
                 Name
             </td>
