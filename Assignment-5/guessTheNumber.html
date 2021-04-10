@@ -36,6 +36,64 @@
     }
 </style>
 
+<script>
+    var num = Math.floor(Math.random() * 101);
+    var counter = 0;
+    function validate(x){
+        if(x == ""){
+            window.alert("Number cannot be empty!");
+            return false;
+        }
+        else if(x >= 'A' && x<='Z' || x >= 'a' && x <='z'){
+            window.alert("Guess cannot be an alphabet!");
+            document.getElementById("guess").value ="";
+            return false;
+        }
+        return true;
+    }
+
+    function guessTheNumber(){
+        var guess = document.getElementById("guess").value;
+        document.getElementById("guess").value ="";
+        if(validate(guess))
+        {
+            counter++;
+            if(counter === 1)
+            {
+                document.getElementById("new_div").innerHTML = "Previous Guesses : " + guess;
+            }
+            else{
+                document.getElementById("new_div").innerHTML += " " + guess;
+            }
+            if(guess > num)
+            {
+                document.getElementById("alert1").innerHTML = "Last guess was too high!";
+                document.getElementById("alert2").style.backgroundColor = "red";
+                document.getElementById("alert2").innerHTML = "Wrong";
+            }
+            else if(guess < num){
+                document.getElementById("alert1").innerHTML = "Last guess was too low!";
+                document.getElementById("alert2").style.backgroundColor = "red";
+                document.getElementById("alert2").innerHTML = "Wrong";
+            }
+            else{
+                document.getElementById("alert2").style.backgroundColor = "green";
+                document.getElementById("alert2").innerHTML = "Congratulations! You got it right.";
+                document.getElementById("sub").disabled = true;
+                document.getElementById("restart").innerHTML = "<button type='reset' onclick='restart()'>Play Again</button>";
+            }
+            if(counter === 10)
+            {
+                document.getElementById("alert3").innerHTML += "You have 0 guesses left.<br>The number was " + num;
+            }
+        }
+    }
+    function restart(){
+        location.reload();
+        
+    }
+</script>
+
 <body>
     <table id="myform">
         <tr>
