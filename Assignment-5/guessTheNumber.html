@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number</title>
+</head>
+<body>
+    <table id="myform">
+        <tr>
+            <th>
+                <h3>Guess the Number!</h3>
+            </th>
+        </tr>
+        <tr>
+            <td>
+                We have selected a number between 1 to 100. Let's see if you can guess the number in 10 turns or less. We'll tell you if your guess was too high or too low.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="guess">Enter a guess: </label>
+                <input type="text" id="guess" name="guess">
+                <br>
+                <button id="sub" type="submit" onclick="guessTheNumber()">Submit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="alert1"></div>
+                <div id="new_div"></div>
+                <div id="alert2"></div>
+                <div id="alert3"></div>
+                <div id="restart"></div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
